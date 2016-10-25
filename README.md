@@ -1,5 +1,11 @@
 # Dual Preonic Keyboard Layout
 
+## Install SKIM for pdf watching while editing
+
+http://skim-app.sourceforge.net/
+or
+`brew cask install skim`
+
 ## Watch dot file with watch-then-cli
 
 `npm i -g watch-then-cli`
