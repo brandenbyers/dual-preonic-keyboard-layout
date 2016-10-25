@@ -1,0 +1,177 @@
+digraph G {
+  rankdir=LR
+  node [shape=plaintext]
+  base [
+     label=<
+<table>
+/* Row 12 */
+  <tr>
+    <td width="50" height="50"><font face="courier" point-size="12">OPT<BR/>CMD</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td bgcolor="grey" width="10" height="50"></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+  </tr>
+/* Row 11 */
+  <tr>
+    <td width="50" height="50"><font face="courier" point-size="12">OPT<BR/>CMD</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td bgcolor="grey" width="10" height="50"></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+  </tr>
+/* Row 10 */
+  <tr>
+    <td width="50" height="50"><font face="courier" point-size="12">OPT<BR/>CMD</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td bgcolor="grey" width="10" height="50"></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+  </tr>
+/* Row 9 */
+  <tr>
+    <td width="50" height="50"><font face="courier" point-size="12">OPT<BR/>CMD</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td bgcolor="grey" width="10" height="50"></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+  </tr>
+/* Row 8 */
+  <tr>
+    <td width="50" height="50"><font face="courier" point-size="12">OPT<BR/>CMD</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td bgcolor="grey" width="10" height="50"></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+  </tr>
+/* Row 7 */
+  <tr>
+    <td width="50" height="50"><font face="courier" point-size="12">OPT<BR/>CMD</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td bgcolor="grey" width="10" height="50"></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+  </tr>
+/* Row 6 */
+  <tr>
+    <td width="50" height="50"><font face="courier" point-size="12">OPT<BR/>CMD</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td bgcolor="grey" width="10" height="50"></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+  </tr>
+/* Row 5 */
+  <tr>
+    <td width="50" height="50"><font face="courier" point-size="12">OPT<BR/>CMD</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td bgcolor="grey" width="10" height="50"></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+  </tr>
+/* Row 4 */
+  <tr>
+    <td width="50" height="50"><font face="courier" point-size="12">OPT<BR/>CMD</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td bgcolor="grey" width="10" height="50"></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+  </tr>
+/* Row 3 */
+  <tr>
+    <td width="50" height="50"><font face="courier" point-size="12">OPT<BR/>CMD</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td bgcolor="grey" width="10" height="50"></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+  </tr>
+/* Row 2 */
+  <tr>
+    <td width="50" height="50"><font face="courier" point-size="12">leader</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">tab</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">mouse</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">OSM<br/>(shft)</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">ctrl<br/>esc</font></td>
+    <td bgcolor="grey" width="10" height="50"></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Hello</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+  </tr>
+/* Row 1 */
+  <tr>
+    <td width="50" height="50"><font face="courier" point-size="12">OPT<BR/>CMD</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td bgcolor="grey" width="10" height="50"></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">Q</font></td>
+  </tr>
+</table>>
+  ]
+}
