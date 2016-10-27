@@ -40,6 +40,7 @@ function collectKeys(layerBlocks) {
     layersAndKeys[el[0]].keys = el[1].match(/<td.+>(.+)<\/font><\/td>/gi)
     return layersAndKeys[el[0]].keys.forEach(function(el, i, arr) {
       // TODO: replace any HTML symbol codes
+      // TODO: flag any modifiers that will require manual key decisions or figure out commenting system and grab comments instead key name visible in the pdf
       return arr[i] = el.match(/<td.+>(.+)<\/font><\/td>/i)[1]
     })
   })
@@ -51,4 +52,4 @@ console.log(layersAndKeys)
 
 // TODO: split keys by keyboard half
 // TODO: separate keys into proper horizontally oriented keyboard rows
-// TODO: 
+// TODO: write keys to QMK file
