@@ -20,7 +20,7 @@ function collectLayers(dotFile) {
       layerBlockIndexes.push(dotFile.indexOf(el))
     })
     layerBlockIndexes.forEach(function(el, i) {
-      layerName = layers[i].toString().match(/\*\s(\w+)\sLAYER \*/)[1]
+      layerName = layers[i].toString().match(/\*\s(\w+)\sLAYER \*/)[1].toLowerCase()
       console.log(layerName)
       layersAndKeys[layerName] = {}
       if (i < layerBlockIndexes.length) {
