@@ -1,0 +1,22 @@
+{
+  "name": "keyboard-layout-converter",
+  "version": "1.0.0",
+  "description": "Convert dot files to proper QMK output",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brandenbyers/dual-preonic-keyboard-layout.git"
+  },
+  "author": "brandenbyers",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brandenbyers/dual-preonic-keyboard-layout/issues"
+  },
+  "homepage": "https://github.com/brandenbyers/dual-preonic-keyboard-layout#readme",
+  "dependencies": {
+    "minimist": "^1.2.0"
+  }
+}
