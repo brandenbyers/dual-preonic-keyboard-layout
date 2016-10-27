@@ -4,78 +4,51 @@ const fs = require('fs')
 const args = require('minimist')(process.argv.slice(2))
 const path = require('path')
 
-const dotFile = args.dotFile
+const dotPath = args.dot
+const dotFile = fs.readFileSync(dotPath, "utf8")
+
+var layersAndKeys = {}
 
 function collectLayers(dotFile) {
-
+  const layers = dotFile.match(/\*\s\w+\sLAYER \*/gi)
+  console.log(layers)
+  let layerBlockIndexes = []
+  let layerBlocks = []
+  let layerName = ""
+  if (layers) {
+    layers.forEach(function(el) {
+      layerBlockIndexes.push(dotFile.indexOf(el))
+    })
+    layerBlockIndexes.forEach(function(el, i) {
+      layerName = layers[i].toString().match(/\*\s(\w+)\sLAYER \*/)[1]
+      console.log(layerName)
+      layersAndKeys[layerName] = {}
+      if (i < layerBlockIndexes.length) {
+        return layerBlocks.push([layerName, dotFile.substring(el, layerBlockIndexes[i + 1])])
+      } else {
+        return layerBlocks.push([layerName, dotFile.substring(el)])
+      }
+    })
+    console.log("Indexes:", layerBlockIndexes)
+    console.log(layersAndKeys)
+  }
+  return layerBlocks
 }
 
-// var collectSteps, collectTestCases;
-//
-// collectTestCases = function(suite) {
-//   var itBlockDeclarations, itBlockIndexes, itBlocks, rawTestCaseName, testCaseId, testCaseIds, testCaseName, testCasePriority, testCaseVersion, testCases;
-//   itBlockDeclarations = suites[suite].contents.match(/it '.*\[TC\d+\.\d+\].*'/gi);
-//   itBlockIndexes = [];
-//   itBlocks = [];
-//   testCaseId = [];
-//   rawTestCaseName = '';
-//   testCaseName = '';
-//   testCaseVersion = 0;
-//   testCasePriority = 1;
-//   testCaseIds = [];
-//   testCases = {};
-//   if (itBlockDeclarations) {
-//     itBlockDeclarations.forEach(function(el) {
-//       itBlockIndexes.push(suites[suite].contents.indexOf(el));
-//       return totalTestCases++;
-//     });
-//     itBlockIndexes.forEach(function(el, i) {
-//       testCaseId = itBlockDeclarations[i].toString().match(/\[TC(\d+)\.\d+\]/)[1];
-//       testCaseVersion = itBlockDeclarations[i].toString().match(/\[TC\d+\.(\d+)\]/)[1];
-//       rawTestCaseName = itBlockDeclarations[i].toString().match(/.*\[TC\d+\.\d+\]\s(.*)'/)[1];
-//       testCaseName = rawTestCaseName.charAt(0).toUpperCase() + rawTestCaseName.slice(1);
-//       if (itBlockDeclarations[i].toString().match(/.*'P(.):\s\[TC\d+\.\d+\]\s.|)}>#)) {
-//         testCasePriority = parseInt(itBlockDeclarations[i].toString().match(/.*'P(.):\s\[TC\d+\.\d+\]\s.|)}>#)[1]);
-//       }
-//       testCaseIds.push([testCaseId, testCaseName, testCasePriority, testCaseVersion]);
-//       if (i < itBlockIndexes.length) {
-//         return itBlocks.push(suites[suite].contents.substring(el, itBlockIndexes[i + 1]));
-//       } else {
-//         return itBlocks.push(suites[suite].contents.substring(el));
-//       }
-//     });
-//     collectSteps(itBlocks, testCases, testCaseIds, testCasePriority, suite);
-//   }
-//   return testCases;
-// };
-//
-// collectSteps = function(itBlocks, testCases, testCaseIds, testCasePriority, suite) {
-//   return itBlocks.forEach(function(el, i) {
-//     if (testCaseIds[i][0]) {
-//       testCases[testCaseIds[i][0]] = {};
-//       testCases[testCaseIds[i][0]].name = testCaseIds[i][1];
-//       testCases[testCaseIds[i][0]].number = testCaseIds[i][0];
-//       testCases[testCaseIds[i][0]].version = testCaseIds[i][3];
-//       testCases[testCaseIds[i][0]].suite = suite;
-//       if (/## Description:.|)}>#gi.exec(el)) {
-//         testCases[testCaseIds[i][0]].description = /## Description:.|)}>#i.exec(el)[0].replace('## Description: ', '');
-//       } else {
-//         console.log('WARNING: no description for test case'.red, testCaseIds[i][0]);
-//       }
-//       if (/## Assumption:.|)}>#i.exec(el)) {
-//         testCases[testCaseIds[i][0]].assumption = /## Assumption:.|)}>#i.exec(el)[0].replace('## Assumption: ', '');
-//       } else {
-//         console.log('WARNING: no assumption for test case'.red, testCaseIds[i][0]);
-//       }
-//       if (testCasePriority[i]) {
-//         testCases[testCaseIds[i][0]].priority = testCasePriority[i];
-//       } else {
-//         testCases[testCaseIds[i][0]].priority = 1;
-//       }
-//       testCases[testCaseIds[i][0]].steps = el.match(/##.(?!Description|Assumption).|)}>#gi);
-//       return testCases[testCaseIds[i][0]].steps.forEach(function(el, i, arr) {
-//         return arr[i] = arr[i].replace('## ', '').split(/;\s|;/);
-//       });
-//     }
-//   });
-// };
+function collectKeys(layerBlocks) {
+  return layerBlocks.forEach(function(el, i) {
+    layersAndKeys[el[0]].keys = el[1].match(/<td.+>(.+)<\/font><\/td>/gi)
+    return layersAndKeys[el[0]].keys.forEach(function(el, i, arr) {
+      // TODO: replace any HTML symbol codes
+      return arr[i] = el.match(/<td.+>(.+)<\/font><\/td>/i)[1]
+    })
+  })
+}
+
+const layerBlocks = collectLayers(dotFile)
+collectKeys(layerBlocks)
+console.log(layersAndKeys)
+
+// TODO: split keys by keyboard half
+// TODO: separate keys into proper horizontally oriented keyboard rows
+// TODO: 
