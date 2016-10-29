@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/brandenbyers/dual-preonic-keyboard-layout#readme",
   "dependencies": {
+    "ansi-align": "^1.1.0",
+    "ent": "^2.2.0",
     "minimist": "^1.2.0"
   }
 }
