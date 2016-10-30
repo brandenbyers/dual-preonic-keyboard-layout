@@ -60,21 +60,27 @@ function separateKeyboards(layers) {
     // Split vertical keyboard into horizontal rows
     layers[layer].keys.forEach(function(key, i) {
       let rowNumber = i % 10
-      console.log('Row number', rowNumber)
       layers[layer].rows[rowNumber].unshift(key)
     })
     // Define keyboard left and keyboard right
     let rows = layers[layer].rows
-    console.log("rowy", rows)
-    console.log("wozer", rows[0])
     layers[layer].leftKeyboard = [].concat(rows["0"], rows["1"], rows["2"], rows["3"], rows["4"])
     layers[layer].rightKeyboard = [].concat(rows["5"], rows["6"], rows["7"], rows["8"], rows["9"])
   }
 }
 
 function keyboardToQMKString(layer, keyboard) {
-  // layer = base_right
-  let k = keyboard
+  // TODO: Dynamic tab generation
+  let k = keyboard.map(function(key) {
+    console.log('Element:', key)
+    if (key == " ") {
+      return "_______"
+      console.log("_______")
+    } else {
+      return key
+    }
+  })
+
   str = `[${layer}] = {
   {${k[0]},  ${k[1]},  ${k[2]},  ${k[3]},  ${k[4]},  ${k[5]},  ${k[6]},  ${k[7]},  ${k[8]},  ${k[9]},  ${k[10]},  ${k[11]}},
   {${k[12]},  ${k[13]},  ${k[14]},  ${k[15]},  ${k[16]},  ${k[17]},  ${k[18]},  ${k[19]},  ${k[20]},  ${k[21]},  ${k[22]},  ${k[23]}},
