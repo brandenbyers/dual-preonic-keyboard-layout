@@ -7,101 +7,11 @@ const ent = require('ent')
 
 const dotPath = args.dot
 const dotFile = fs.readFileSync(dotPath, "utf8")
-
-var layers = {}
-
-
-function collectLayers(dotFile) {
-  const layerMatches = dotFile.match(/\*\s\w+\sLAYER \*/gi)
-  console.log(layerMatches)
-  let layerBlockIndexes = []
-  let layerBlocks = []
-  let layerName = ""
-  if (layerMatches) {
-    layerMatches.forEach(function(el) {
-      layerBlockIndexes.push(dotFile.indexOf(el))
-    })
-    layerBlockIndexes.forEach(function(el, i) {
-      layerName = layerMatches[i].toString().match(/\*\s(\w+)\sLAYER \*/)[1].toLowerCase()
-      console.log(layerName)
-      layers[layerName] = {}
-      if (i < layerBlockIndexes.length) {
-        return layerBlocks.push([layerName, dotFile.substring(el, layerBlockIndexes[i + 1])])
-      } else {
-        return layerBlocks.push([layerName, dotFile.substring(el)])
-      }
-    })
-    console.log("Indexes:", layerBlockIndexes)
-    console.log(layers)
-  }
-  return layerBlocks
-}
-
-function collectKeys(layerBlocks) {
-  return layerBlocks.forEach(function(el, i) {
-    layers[el[0]].keys = el[1].match(/<td.+>(.+)<\/font><\/td>/gi)
-    return layers[el[0]].keys.forEach(function(el, i, arr) {
-      // TODO: flag any modifiers that will require manual key decisions or figure out commenting system and grab comments instead key name visible in the pdf
-      return arr[i] = ent.decode(el.match(/<td.+>(.+)<\/font><\/td>/i)[1])
-    })
-  })
-}
-
-function separateKeyboards(layers) {
-  if (!layers) {
-    return console.log("Can not separate rows without layers and keys.")
-  }
-  for (let layer in layers) {
-    // Define row arrays
-    layers[layer].rows = {}
-    for (let rowNumber of [0,1,2,3,4,5,6,7,8,9]){
-      layers[layer].rows[rowNumber] = []
-    }
-    // Split vertical keyboard into horizontal rows
-    layers[layer].keys.forEach(function(key, i) {
-      let rowNumber = i % 10
-      layers[layer].rows[rowNumber].unshift(key)
-    })
-    // Define keyboard left and keyboard right
-    let rows = layers[layer].rows
-    layers[layer].leftKeyboard = [].concat(rows["0"], rows["1"], rows["2"], rows["3"], rows["4"])
-    layers[layer].rightKeyboard = [].concat(rows["5"], rows["6"], rows["7"], rows["8"], rows["9"])
-  }
-}
-
-function keyboardToQMKString(layer, keyboard) {
-  // TODO: Dynamic tab generation
-  let k = keyboard.map(function(key) {
-    console.log('Element:', key)
-    if (key == " ") {
-      return "_______"
-      console.log("_______")
-    } else {
-      return key
-    }
-  })
-
-  str = `[${layer}] = {
-  {${k[0]},  ${k[1]},  ${k[2]},  ${k[3]},  ${k[4]},  ${k[5]},  ${k[6]},  ${k[7]},  ${k[8]},  ${k[9]},  ${k[10]},  ${k[11]}},
-  {${k[12]},  ${k[13]},  ${k[14]},  ${k[15]},  ${k[16]},  ${k[17]},  ${k[18]},  ${k[19]},  ${k[20]},  ${k[21]},  ${k[22]},  ${k[23]}},
-  {${k[24]},  ${k[25]},  ${k[26]},  ${k[27]},  ${k[28]},  ${k[29]},  ${k[30]},  ${k[31]},  ${k[32]},  ${k[33]},  ${k[34]},  ${k[35]}},
-  {${k[36]},  ${k[37]},  ${k[38]},  ${k[39]},  ${k[40]},  ${k[41]},  ${k[42]},  ${k[43]},  ${k[44]},  ${k[45]},  ${k[46]}}, ${k[47]}},
-  {${k[48]},  ${k[49]},  ${k[50]},  ${k[51]},  ${k[52]},  ${k[53]},  ${k[54]},  ${k[55]},  ${k[56]},  ${k[57]},  ${k[58]}}, ${k[59]}}
-},`
-  console.log(str)
-}
-
-const layerBlocks = collectLayers(dotFile)
-collectKeys(layerBlocks)
-separateKeyboards(layers)
-console.log(layers)
-keyboardToQMKString('_BASE_LEFT', layers.base.leftKeyboard)
-
-// TODO: write keys to QMK file
-//
-// If modulo unshift specific left/right keyboard and specific row 1-5
-
 const keycodes = {
+  KC_TRNS: "_______",              // Transparent
+  leader: "KC_LEAD",               // Leader Key
+  mouse: "TG(_MOUSE)",             // Toggle Mouse Layer
+  mouse: "TG(_CODE)",              // Toggle Code Layer
   no: "KC_NO",                     // 00 Reserved (no event indicated)
   rollover: "KC_ROLL_OVER",        // 01 Keyboard ErrorRollOver
   fail: "KC_POST_FAIL",            // 02 Keyboard POSTFail
@@ -162,8 +72,7 @@ const keycodes = {
   "caps": "KC_CAPS",        // 39 Keyboard Caps Lock
   "F1": "KC_F1",          // 3A Keyboard F1
   "F2": "KC_F2",          // 3B Keyboard F2
-  "F3": "KC_F3",          // 3C Keyboard F3
-  "F4": "KC_F4",          // 3D Keyboard F4
+  "F3": "KC_F3",          // 3C Keyboard F3 "F4": "KC_F4",          // 3D Keyboard F4
   "F5": "KC_F5",          // 3E Keyboard F5
   "F6": "KC_F6",          // 3F Keyboard F6
   "F7": "KC_F7",          // 40 Keyboard F7
@@ -300,22 +209,22 @@ const keycodes = {
   "wwwrefresh": "KC_WREF",  // KC_WWW_REFRESH
   "wwwfavorites": "KC_WFAV",  // KC_WWW_FAVORITES
 // #<{(| Mousekey |)}>#
-  "cursor up": "KC_MS_U",     // Mouse Cursor Up
-  "cursor down": "KC_MS_D",     // Mouse Cursor Down
-  "cursor left": "KC_MS_L",     // Mouse Cursor Left
-  "cursor right": "KC_MS_R",     // Mouse Cursor Right
-  "left click": "KC_BTN1",     // Mouse Button 1
-  "right click": "KC_BTN2",     // Mouse Button 2
-  "mbutton 3": "KC_BTN3",     // Mouse Button 3
-  "mbutton 4": "KC_BTN4",     // Mouse Button 4
-  "mbutton 5": "KC_BTN5",     // Mouse Button 5
-  "scroll up": "KC_WH_U",     // Mouse Wheel Up
-  "scroll down": "KC_WH_D",     // Mouse Wheel Down
-  "scroll left": "KC_WH_L",     // Mouse Wheel Left
-  "scroll right": "KC_WH_R",     // Mouse Wheel Right
-  "acceleration 0": "KC_ACL0",     // Mouse Acceleration 0
-  "acceleration 1": "KC_ACL1",     // Mouse Acceleration 1
-  "accesleration 2": "KC_ACL2",     // Mouse Acceleration 2
+  "mup": "KC_MS_U",     // Mouse Cursor Up
+  "mdown": "KC_MS_D",     // Mouse Cursor Down
+  "mleft": "KC_MS_L",     // Mouse Cursor Left
+  "mright": "KC_MS_R",     // Mouse Cursor Right
+  "lclick": "KC_BTN1",     // Mouse Button 1
+  "rclick": "KC_BTN2",     // Mouse Button 2
+  "btn3": "KC_BTN3",     // Mouse Button 3
+  "btn4": "KC_BTN4",     // Mouse Button 4
+  "btn5": "KC_BTN5",     // Mouse Button 5
+  "sup": "KC_WH_U",     // Mouse Wheel Up
+  "sdown": "KC_WH_D",     // Mouse Wheel Down
+  "sleft": "KC_WH_L",     // Mouse Wheel Left
+  "sright": "KC_WH_R",     // Mouse Wheel Right
+  "acc0": "KC_ACL0",     // Mouse Acceleration 0
+  "acc1": "KC_ACL1",     // Mouse Acceleration 1
+  "acc2": "KC_ACL2",     // Mouse Acceleration 2
 // #<{(| Fn key |)}>#
   "FN0": "KC_FN0",
   "FN1": "KC_FN1",
@@ -350,3 +259,97 @@ const keycodes = {
   "FN30": "KC_FN30",
   "FN31": "KC_FN31"
 }
+
+var layers = {}
+
+
+function collectLayers(dotFile) {
+  const layerMatches = dotFile.match(/\*\s\w+\sLAYER \*/gi)
+  console.log(layerMatches)
+  let layerBlockIndexes = []
+  let layerBlocks = []
+  let layerName = ""
+  if (layerMatches) {
+    layerMatches.forEach(function(el) {
+      layerBlockIndexes.push(dotFile.indexOf(el))
+    })
+    layerBlockIndexes.forEach(function(el, i) {
+      layerName = layerMatches[i].toString().match(/\*\s(\w+)\sLAYER \*/)[1].toLowerCase()
+      console.log(layerName)
+      layers[layerName] = {}
+      if (i < layerBlockIndexes.length) {
+        return layerBlocks.push([layerName, dotFile.substring(el, layerBlockIndexes[i + 1])])
+      } else {
+        return layerBlocks.push([layerName, dotFile.substring(el)])
+      }
+    })
+    console.log("Indexes:", layerBlockIndexes)
+    console.log(layers)
+  }
+  return layerBlocks
+}
+
+function collectKeys(layerBlocks) {
+  return layerBlocks.forEach(function(el, i) {
+    layers[el[0]].keys = el[1].match(/<td.+>(.+)<\/font><\/td>/gi)
+    return layers[el[0]].keys.forEach(function(el, i, arr) {
+      // TODO: flag any modifiers that will require manual key decisions or figure out commenting system and grab comments instead key name visible in the pdf
+      return arr[i] = ent.decode(el.match(/<td.+>(.+)<\/font><\/td>/i)[1])
+    })
+  })
+}
+
+function separateKeyboards(layers) {
+  if (!layers) {
+    return console.log("Can not separate rows without layers and keys.")
+  }
+  for (let layer in layers) {
+    // Define row arrays
+    layers[layer].rows = {}
+    for (let rowNumber of [0,1,2,3,4,5,6,7,8,9]){
+      layers[layer].rows[rowNumber] = []
+    }
+    // Split vertical keyboard into horizontal rows
+    layers[layer].keys.forEach(function(key, i) {
+      let rowNumber = i % 10
+      layers[layer].rows[rowNumber].unshift(key)
+    })
+    // Define keyboard left and keyboard right
+    let rows = layers[layer].rows
+    layers[layer].leftKeyboard = [].concat(rows["0"], rows["1"], rows["2"], rows["3"], rows["4"])
+    layers[layer].rightKeyboard = [].concat(rows["5"], rows["6"], rows["7"], rows["8"], rows["9"])
+  }
+}
+
+function keyboardToQMKString(layer, keyboard) {
+  // TODO: Dynamic tab generation
+  let k = keyboard.map(function(key) {
+    if (key == ent.decode("&nbsp;")) {
+      return "KC_TRNS"
+    } else {
+      return key
+    }
+  })
+
+  str = `[${layer}] = {
+  {${keycodes[k[0]]},  ${keycodes[k[1]]},  ${keycodes[k[2]]},  ${keycodes[k[3]]},  ${keycodes[k[4]]},  ${keycodes[k[5]]},  ${keycodes[k[6]]},  ${keycodes[k[7]]},  ${keycodes[k[8]]},  ${keycodes[k[9]]}},
+  {${keycodes[k[10]]},  ${keycodes[k[11]]},  ${keycodes[k[12]]},  ${keycodes[k[13]]},  ${keycodes[k[14]]},  ${keycodes[k[15]]},  ${keycodes[k[16]]},  ${keycodes[k[17]]},  ${keycodes[k[18]]},  ${keycodes[k[19]]}},
+  {${keycodes[k[20]]},  ${keycodes[k[21]]},  ${keycodes[k[22]]},  ${keycodes[k[23]]},  ${keycodes[k[24]]},  ${keycodes[k[25]]},  ${keycodes[k[26]]},  ${keycodes[k[27]]},  ${keycodes[k[28]]},  ${keycodes[k[29]]}},
+  {${keycodes[k[30]]},  ${keycodes[k[31]]},  ${keycodes[k[32]]},  ${keycodes[k[33]]},  ${keycodes[k[34]]},  ${keycodes[k[35]]},  ${keycodes[k[36]]},  ${keycodes[k[37]]},  ${keycodes[k[38]]},  ${keycodes[k[39]]}},
+  {${keycodes[k[40]]},  ${keycodes[k[41]]},  ${keycodes[k[42]]},  ${keycodes[k[43]]},  ${keycodes[k[44]]},  ${keycodes[k[45]]},  ${keycodes[k[46]]},  ${keycodes[k[47]]},  ${keycodes[k[48]]},  ${keycodes[k[49]]}}
+},`
+  console.log(str)
+}
+
+const layerBlocks = collectLayers(dotFile)
+collectKeys(layerBlocks)
+// separateKeyboards(layers)
+console.log(layers)
+// keyboardToQMKString('_BASE_LEFT', layers.base.leftKeyboard)
+keyboardToQMKString('_BASE', layers.base.keys)
+keyboardToQMKString('_MOUSE', layers.mouse.keys)
+
+// TODO: write keys to QMK file
+//
+// If modulo unshift specific left/right keyboard and specific row 1-5
+
