@@ -8,14 +8,53 @@ const ent = require('ent')
 const dotPath = args.dot
 const dotFile = fs.readFileSync(dotPath, "utf8")
 const keycodes = {
+  // Special
+  RESET: "RESET",                  // Reset
   KC_TRNS: "_______",              // Transparent
+  ctrlE: "CTL_T(KC_ESC)",          // Escape on Tap and Control on hold
+  shiftZ: "SFT_T(KC_Z)",           // Z on Tap and Shift on hold
+  shiftS: "SFT_T(KC_SLSH)",        // Slash on Tap and Shift on hold
+  optC: "ALT_T(KC_C)",             // C on Tap and Option on hold
+  "opt,": "ALT_T(KC_COMM)",        // Slash on Tap and Option on hold
+  cmdV: "GUI_T(KC_V)",             // V on Tap and Command on hold
+  cmdM: "GUI_T(KC_M)",             // M on Tap and Command on hold
+  hyperT: "ALL_T(KC_TAB)",         // Tab on Tap and Hyper on hold
   leader: "KC_LEAD",               // Leader Key
+  base: "TO(_BASE)",               // Go To Base Layer
   mouse: "TG(_MOUSE)",             // Toggle Mouse Layer
-  mouse: "TG(_CODE)",              // Toggle Code Layer
+  code: "OSL(_CODE)",               // Momentary Switch to Code Layer when held
+  vim: "OSL(_VIM)",                 // Momentary Switch Vim Layer
+  macro: "OSL(_MACRO)",            // One-Shot Momentary Switch to Macro Layer
   no: "KC_NO",                     // 00 Reserved (no event indicated)
   rollover: "KC_ROLL_OVER",        // 01 Keyboard ErrorRollOver
   fail: "KC_POST_FAIL",            // 02 Keyboard POSTFail
-  err: "KC_UNDEFINED",             // 03 Keyboard ErrorUndefined
+  err: "KC_UNDEFINED",             // 03 Keyboard Error Undefined
+  // Shifted Keys
+  "~": "LSFT(KC_GRV)",
+  "!": "LSFT(KC_1)",
+  "@": "LSFT(KC_2)",
+  "#": "LSFT(KC_3)",
+  "$": "LSFT(KC_4)",
+  "%": "LSFT(KC_5)",
+  "^": "LSFT(KC_6)",
+  "&": "LSFT(KC_7)",
+  "*": "LSFT(KC_8)",
+  "(": "LSFT(KC_9)",
+  ")": "LSFT(KC_0)",
+  "_": "LSFT(KC_MINS)",
+  "+": "LSFT(KC_EQL)",
+  "{": "LSFT(KC_LBRC)",
+  "}": "LSFT(KC_RBRC)",
+  "|": "LSFT(KC_BSLS)",
+  ":": "LSFT(KC_SCLN)",
+  "\"": "LSFT(KC_QUOT)",
+  "<": "LSFT(KC_COMM)",
+  ">": "LSFT(KC_DOT)",
+  "?": "LSFT(KC_SLSH)",
+  // Option Shift Keys
+  "°": "LALT(LSFT(KC_8))",         // Degrees Symbol
+  "¨": "LALT(LSFT(KC_U))",         // Umlaut ¨
+  // Regular Keys
   a: "KC_A",                       // 04 Keyboard a and A
   b: "KC_B",                       // 05 Keyboard b and B
   c: "KC_C",                       // 06 Keyboard c and C
@@ -348,6 +387,9 @@ console.log(layers)
 // keyboardToQMKString('_BASE_LEFT', layers.base.leftKeyboard)
 keyboardToQMKString('_BASE', layers.base.keys)
 keyboardToQMKString('_MOUSE', layers.mouse.keys)
+keyboardToQMKString('_CODE', layers.code.keys)
+keyboardToQMKString('_VIM', layers.vim.keys)
+keyboardToQMKString('_MACRO', layers.macro.keys)
 
 // TODO: write keys to QMK file
 //
