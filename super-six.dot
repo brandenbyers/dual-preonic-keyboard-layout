@@ -1,0 +1,851 @@
+digraph G {
+  rankdir=LR
+  node [shape=plaintext]
+
+/* COLOR MAP */
+  color [
+     label=<
+<table>
+  <tr>
+    <td bgcolor="#F7C548" width="50" height="50"><font face="courier" color="#FFFFF" point-size="12">OSL()</font></td>
+    <td bgcolor="#24A9C4" width="50" height="50"><font face="courier" color="#FFFFF" point-size="12">LT()</font></td>
+    <td bgcolor="#9f51C4" width="50" height="50"><font face="courier" color="#FFFFF" point-size="12">TG()</font></td>
+    <td bgcolor="#82D476" width="50" height="50"><font face="courier" color="#FFFFF" point-size="12">&nbsp;</font></td>
+    <td bgcolor="#F78A46" width="50" height="50"><font face="courier" color="#FFFFF" point-size="12">&nbsp;</font></td>
+    <td bgcolor="#EB3F57" width="50" height="50"><font face="courier" color="#FFFFF" point-size="12">&nbsp;</font></td>
+  </tr>
+</table>>
+  ]
+
+/* BASE LAYER */
+  base [
+     label=<
+<table>
+/* Row 6 "Functions" */
+  <tr>
+    <td width="50" height="50"><font face="courier" point-size="12">base</font></td>
+    <td port="mouseKey" width="50" height="50"><font face="courier" point-size="12">mouse</font></td>
+    <td port="numKey" width="50" height="50"><font face="courier" point-size="12">num</font></td>
+    <td port="emojiKey" width="50" height="50"><font face="courier" point-size="12">emoji</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td bgcolor="grey" width="10" height="50"></td>
+    <td port="macroKey" width="50" height="50"><font face="courier" point-size="12">macro</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+  </tr>
+/* Row 5 "Numbers" */
+  <tr>
+    <td width="50" height="50"><font face="courier" point-size="12">`</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">1</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">2</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">3</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">4</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">5</font></td>
+    <td bgcolor="grey" width="10" height="50"></td>
+    <td width="50" height="50"><font face="courier" point-size="12">6</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">7</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">8</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">9</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">0</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">bksp</font></td>
+  </tr>
+/* Row 4 */
+  <tr>
+    <td width="50" height="50"><font face="courier" point-size="12">tab</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">q</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">w</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">e</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">r</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">t</font></td>
+    <td bgcolor="grey" width="10" height="50"></td>
+    <td width="50" height="50"><font face="courier" point-size="12">y</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">u</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">i</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">o</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">p</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">-</font></td>
+  </tr>
+/* Row 3 "Home Row" */
+  <tr>
+    <td width="50" height="50"><font face="courier" point-size="12">ctrlE</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">a</font></td>
+    <td port="mouseSKey" width="50" height="50"><font face="courier" point-size="12">s</font></td>
+    <td port="vimKey" width="50" height="50"><font face="courier" point-size="12">d</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">f</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">g</font></td>
+    <td bgcolor="grey" width="10" height="50"></td>
+    <td width="50" height="50"><font face="courier" point-size="12">h</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">j</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">k</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">l</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">'</font></td>
+  </tr>
+/* Row 2 */
+  <tr>
+    <td width="50" height="50"><font face="courier" point-size="12">shift</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">z</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">x</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">c</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">v</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">b</font></td>
+    <td bgcolor="grey" width="10" height="50"></td>
+    <td width="50" height="50"><font face="courier" point-size="12">n</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">m</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">,</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">.</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">/</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">=</font></td>
+  </tr>
+/* Row 1 */
+  <tr>
+    <td width="50" height="50"><font face="courier" point-size="12">meh</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">hyper</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">opt</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">cmd</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">leader</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">return</font></td>
+    <td bgcolor="grey" width="10" height="50"></td>
+    <td port="codeKey" width="50" height="50"><font face="courier" point-size="12">code</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">space</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">fn</font></td>
+  </tr>
+</table>>
+  ]
+
+/* CODE LAYER */
+  code [
+     label=<
+<table>
+/* Row 6 */
+  <tr>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td bgcolor="grey" width="10" height="50"></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+  </tr>
+/* Row 5 */
+  <tr>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">~</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">`</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">(</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">{</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&#91;</font></td>
+    <td bgcolor="grey" width="10" height="50"></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&#93;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">}</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">)</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">_</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">+</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+  </tr>
+/* Row 4 "Home Row" */
+  <tr>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">1</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">2</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">3</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">4</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">5</font></td>
+    <td bgcolor="grey" width="10" height="50"></td>
+    <td width="50" height="50"><font face="courier" point-size="12">6</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">7</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">8</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">9</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">0</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+  </tr>
+/* Row 3 */
+  <tr>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">!</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">@</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">#</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">$</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">%</font></td>
+    <td bgcolor="grey" width="10" height="50"></td>
+    <td width="50" height="50"><font face="courier" point-size="12">^</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&amp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">*</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">-</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">=</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+  </tr>
+/* Row 2 "Upper Thumb Row" */
+  <tr>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">°</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&#92;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">|</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td bgcolor="grey" width="10" height="50"></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+  </tr>
+/* Row 1 "Lower Thumb Row" */
+  <tr>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td bgcolor="grey" width="10" height="50"></td>
+    <td port="codeLayer" bgcolor="#F7C548" width="50" height="50"><font color="white" face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+  </tr>
+</table>>
+  ]
+
+/* MOUSE LAYER */
+  mouse [
+     label=<
+<table>
+/* Row 6 */
+  <tr>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td port="mouseLayer" bgcolor="#9F51C4" width="50" height="50"><font color="white" face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td bgcolor="grey" width="10" height="50"></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+  </tr>
+/* Row 5 */
+  <tr>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">sleft</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">sright</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td bgcolor="grey" width="10" height="50"></td>
+    <td width="50" height="50"><font face="courier" point-size="12">btn3</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">btn4</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">btn5</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+  </tr>
+/* Row 4 "Home Row" */
+  <tr>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td port="mouseSLayer" bgcolor="#24A9C4" width="50" height="50"><font color="white" face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">sdown</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">sup</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td bgcolor="grey" width="10" height="50"></td>
+    <td width="50" height="50"><font face="courier" point-size="12">mleft</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">mdown</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">mup</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">mright</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+  </tr>
+/* Row 3 */
+  <tr>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">lclick</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">rclick</font></td>
+    <td bgcolor="grey" width="10" height="50"></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+  </tr>
+/* Row 2 "Upper Thumb Row" */
+  <tr>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td bgcolor="grey" width="10" height="50"></td>
+    <td width="50" height="50"><font face="courier" point-size="12">acc0</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">acc1</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">acc2</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+  </tr>
+/* Row 1 "Lower Thumb Row" */
+  <tr>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td bgcolor="grey" width="10" height="50"></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+  </tr>
+</table>>
+  ]
+
+/* VIM LAYER */
+  vim [
+     label=< <table>
+/* Row 6 */
+  <tr>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td bgcolor="grey" width="10" height="50"></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+  </tr>
+/* Row 5 */
+  <tr>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td bgcolor="grey" width="10" height="50"></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+  </tr>
+/* Row 4 "Home Row" */
+  <tr>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td bgcolor="grey" width="10" height="50"></td>
+    <td width="50" height="50"><font face="courier" point-size="12">←</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">↓</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">↑</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">→</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+  </tr>
+/* Row 3 */
+  <tr>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td port="vimLayer" bgcolor="#24A9C4" width="50" height="50"><font color="white" face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td bgcolor="grey" width="10" height="50"></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+  </tr>
+/* Row 2 "Upper Thumb Row" */
+  <tr>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td bgcolor="grey" width="10" height="50"></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+  </tr>
+/* Row 1 "Lower Thumb Row" */
+  <tr>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td bgcolor="grey" width="10" height="50"></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+  </tr>
+</table>>
+  ]
+
+/* MACRO LAYER */
+  macro [
+     label=<
+<table>
+/* Row 6 */
+  <tr>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td bgcolor="grey" width="10" height="50"></td>
+    <td port="macroLayer" bgcolor="#F7C548" width="50" height="50"><font color="white" face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+  </tr>
+/* Row 5 */
+  <tr>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td bgcolor="grey" width="10" height="50"></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+  </tr>
+/* Row 4 "Home Row" */
+  <tr>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td bgcolor="grey" width="10" height="50"></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+  </tr>
+/* Row 3 */
+  <tr>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td bgcolor="grey" width="10" height="50"></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+  </tr>
+/* Row 2 "Upper Thumb Row" */
+  <tr>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td bgcolor="grey" width="10" height="50"></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+  </tr>
+/* Row 1 "Lower Thumb Row" */
+  <tr>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td bgcolor="grey" width="10" height="50"></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">RESET</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+  </tr>
+</table>>
+  ]
+
+/* NUM LAYER */
+  num [
+     label=<
+<table>
+/* Row 6 */
+  <tr>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td port="numLayer" bgcolor="#9F51C4" width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td bgcolor="grey" width="10" height="50"></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+  </tr>
+/* Row 5 */
+  <tr>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td bgcolor="grey" width="10" height="50"></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+  </tr>
+/* Row 4 "Home Row" */
+  <tr>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td bgcolor="grey" width="10" height="50"></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+  </tr>
+/* Row 3 */
+  <tr>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td bgcolor="grey" width="10" height="50"></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+  </tr>
+/* Row 2 "Upper Thumb Row" */
+  <tr>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td bgcolor="grey" width="10" height="50"></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+  </tr>
+/* Row 1 "Lower Thumb Row" */
+  <tr>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td bgcolor="grey" width="10" height="50"></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+  </tr>
+</table>>
+  ]
+
+/* EMOJI LAYER */
+  emoji [
+     label=<
+<table>
+/* Row 6 */
+  <tr>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td port="emojiLayer" bgcolor="#F7C548" width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td bgcolor="grey" width="10" height="50"></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+  </tr>
+/* Row 5 */
+  <tr>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td bgcolor="grey" width="10" height="50"></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+  </tr>
+/* Row 4 "Home Row" */
+  <tr>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td bgcolor="grey" width="10" height="50"></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+  </tr>
+/* Row 3 */
+  <tr>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td bgcolor="grey" width="10" height="50"></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+  </tr>
+/* Row 2 "Upper Thumb Row" */
+  <tr>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td bgcolor="grey" width="10" height="50"></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+  </tr>
+/* Row 1 "Lower Thumb Row" */
+  <tr>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td bgcolor="grey" width="10" height="50"></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+  </tr>
+</table>>
+  ]
+
+/* BLANK LAYER */
+  blank [
+     label=<
+<table>
+/* Row 6 */
+  <tr>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td bgcolor="grey" width="10" height="50"></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+  </tr>
+/* Row 5 */
+  <tr>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td bgcolor="grey" width="10" height="50"></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+  </tr>
+/* Row 4 "Home Row" */
+  <tr>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td bgcolor="grey" width="10" height="50"></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+  </tr>
+/* Row 3 */
+  <tr>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td bgcolor="grey" width="10" height="50"></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+  </tr>
+/* Row 2 "Upper Thumb Row" */
+  <tr>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td bgcolor="grey" width="10" height="50"></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+  </tr>
+/* Row 1 "Lower Thumb Row" */
+  <tr>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td bgcolor="grey" width="10" height="50"></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+  </tr>
+</table>>
+  ]
+
+base:mouseKey -> mouse:mouseLayer [dir=both color=grey style=dashed]
+base:numKey -> num:numLayer [dir=both color=grey style=dashed]
+base:emojiKey -> emoji:emojiLayer [dir=both color=grey style=dashed]
+base:macroKey -> macro:macroLayer [dir=both color=grey style=dashed]
+base:mouseSKey -> mouse:mouseSLayer [dir=both color=grey style=dashed]
+base:vimKey -> vim:vimLayer [dir=both color=grey style=dashed]
+base:codeKey -> code:codeLayer [dir=both color=grey style=dashed]
+}
