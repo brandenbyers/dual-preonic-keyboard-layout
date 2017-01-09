@@ -35,10 +35,10 @@ digraph G {
     <td bgcolor="grey" width="10" height="50"></td>
     <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
     <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
-    <td width="50" height="50"><font face="courier" point-size="12">7</font></td>
-    <td width="50" height="50"><font face="courier" point-size="12">8</font></td>
-    <td width="50" height="50"><font face="courier" point-size="12">9</font></td>
-    <td width="50" height="50"><font face="courier" point-size="12">*</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">n7</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">n8</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">n9</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">n*</font></td>
     <td width="50" height="50"><font face="courier" point-size="12">dim</font></td>
     <td width="50" height="50"><font face="courier" point-size="12">bright</font></td>
     <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
@@ -57,10 +57,10 @@ digraph G {
     <td bgcolor="grey" width="10" height="50"></td>
     <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
     <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
-    <td width="50" height="50"><font face="courier" point-size="12">4</font></td>
-    <td width="50" height="50"><font face="courier" point-size="12">5</font></td>
-    <td width="50" height="50"><font face="courier" point-size="12">6</font></td>
-    <td width="50" height="50"><font face="courier" point-size="12">/</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">n4</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">n5</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">n6</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">n/</font></td>
     <td width="50" height="50"><font face="courier" point-size="12">prev</font></td>
     <td width="50" height="50"><font face="courier" point-size="12">play</font></td>
     <td width="50" height="50"><font face="courier" point-size="12">next</font></td>
@@ -79,13 +79,13 @@ digraph G {
     <td bgcolor="grey" width="10" height="50"></td>
     <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
     <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
-    <td width="50" height="50"><font face="courier" point-size="12">1</font></td>
-    <td width="50" height="50"><font face="courier" point-size="12">2</font></td>
-    <td width="50" height="50"><font face="courier" point-size="12">3</font></td>
-    <td width="50" height="50"><font face="courier" point-size="12">-</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">n1</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">n2</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">n3</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">n-</font></td>
     <td width="50" height="50"><font face="courier" point-size="12">mute</font></td>
-    <td width="50" height="50"><font face="courier" point-size="12">up</font></td>
-    <td width="50" height="50"><font face="courier" point-size="12">down</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">vold</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">volu</font></td>
   </tr>
 /* Row 6 "Functions" */
   <tr>
@@ -101,10 +101,10 @@ digraph G {
     <td bgcolor="grey" width="10" height="50"></td>
     <td port="macroKey" width="50" height="50"><font face="courier" point-size="12">macro</font></td>
     <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
-    <td width="50" height="50"><font face="courier" point-size="12">.</font></td>
-    <td width="50" height="50"><font face="courier" point-size="12">0</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">n.</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">n0</font></td>
     <td width="50" height="50"><font face="courier" point-size="12">enter</font></td>
-    <td width="50" height="50"><font face="courier" point-size="12">+</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">n+</font></td>
     <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
     <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
     <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
@@ -165,7 +165,7 @@ digraph G {
     <td width="50" height="50"><font face="courier" point-size="12">g</font></td>
     <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
     <td bgcolor="grey" width="10" height="50"></td>
-    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">lclick</font></td>
     <td width="50" height="50"><font face="courier" point-size="12">h</font></td>
     <td width="50" height="50"><font face="courier" point-size="12">j</font></td>
     <td width="50" height="50"><font face="courier" point-size="12">k</font></td>
@@ -187,7 +187,7 @@ digraph G {
     <td width="50" height="50"><font face="courier" point-size="12">b</font></td>
     <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
     <td bgcolor="grey" width="10" height="50"></td>
-    <td width="50" height="50"><font face="courier" point-size="12">&nbsp;</font></td>
+    <td width="50" height="50"><font face="courier" point-size="12">rclick</font></td>
     <td width="50" height="50"><font face="courier" point-size="12">n</font></td>
     <td width="50" height="50"><font face="courier" point-size="12">m</font></td>
     <td width="50" height="50"><font face="courier" point-size="12">,</font></td>

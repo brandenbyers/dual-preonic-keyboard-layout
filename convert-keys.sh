@@ -230,12 +230,12 @@ const keycodes = {
   "wake": "KC_WAKE",        // System Wake
 // #<{(| Consumer Page |)}>#
   "mute": "KC_MUTE",  // KC_AUDIO_MUTE
-  "volup": "KC_VOLU",  // KC_AUDIO_VOL_UP
-  "voldown": "KC_VOLD",  // KC_AUDIO_VOL_DOWN
-  "nexttrack": "KC_MNXT",  // KC_MEDIA_NEXT_TRACK
-  "prevtrack": "KC_MPRV",  // KC_MEDIA_PREV_TRACK
-  "mediastop": "KC_MSTP",  // KC_MEDIA_STOP
-  "mediaplay": "KC_MPLY",  // KC_MEDIA_PLAY_PAUSE
+  "volu": "KC_VOLU",  // KC_AUDIO_VOL_UP
+  "vold": "KC_VOLD",  // KC_AUDIO_VOL_DOWN
+  "next": "KC_MNXT",  // KC_MEDIA_NEXT_TRACK
+  "prev": "KC_MPRV",  // KC_MEDIA_PREV_TRACK
+  "stop": "KC_MSTP",  // KC_MEDIA_STOP
+  "play": "KC_MPLY",  // KC_MEDIA_PLAY_PAUSE
   "mediaselect": "KC_MSEL",  // KC_MEDIA_SELECT
   "mail": "KC_MAIL",
   "calc": "KC_CALC",  // KC_CALCULATOR
